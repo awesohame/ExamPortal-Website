@@ -73,7 +73,8 @@ app.post('/login', function (req, res) {
                 // res.redirect('/continue');
                 res.render('continue.ejs', { username });
             } else {
-                res.send('Incorrect Username and/or Password!');
+                // res.send('Incorrect Username and/or Password!');
+                res.render('incorrectpw.ejs', { username })
             }
             //console.log(results);
         }
@@ -98,7 +99,7 @@ app.post('/signup', function (req, res) {
                 // res.redirect('/continue');
                 // res.render('continue.ejs', { username });
 
-                res.send('test exists');
+                res.render('userexists.ejs', { username });
             } else {
 
                 try {
