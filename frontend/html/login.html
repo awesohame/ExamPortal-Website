@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link href="../img/favicon.ico" rel="icon">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/login.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <h1 class="heading">Login</h1>
+            <form action="/login" method="POST">
+                <!-- <label for="Username">Username</label> -->
+                <input class="field" placeholder="Create an username" type="text" id="Username" name="username"
+                    required>
+                <!-- <label for="Password">Password</label> -->
+                <input class="field" placeholder="Create a password" type="password" id="Password" name="password"
+                    required>
+                <button class="btn" type="submit">Login</button>
+            </form>
+            <div class="footer">
+                <p>Not registered yet? <a href="/signup">Sign up here</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
