@@ -210,3 +210,9 @@ ul>.input_options:hover {
     background-color: #5cb874;
     transition: .7s;
 }
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

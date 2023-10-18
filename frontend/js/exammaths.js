@@ -105,6 +105,8 @@ const d_radio = document.getElementById('d');
 const submitBtn = document.getElementById('myBtn');
 const quesbtn = document.querySelectorAll('.ques');
 const finishbtn = document.getElementById('finish');
+const submitparent = document.querySelector('.btncontainer');
+const questionscontainer = document.querySelector('.questions');
 let choices = ['e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e'];
 
 let currentQuiz = 0;
@@ -137,6 +139,13 @@ function loadQuiz() {
             d_radio.checked = true;
         }
     }
+    console.log(currentQuiz);
+    if (currentQuiz == 9) {
+        submitBtn.remove();
+    }
+    else {
+        submitparent.appendChild(submitBtn);
+    }
 };
 //this function deselect the buttons
 function deselectChoices() {
@@ -155,10 +164,6 @@ function getSelected() {
 //this method will add an event listener once the submit button has been clicked
 submitBtn.addEventListener('click', () => {
     const chosen = getSelected();
-    // if (chosen) {
-    //     if (chosen === questionArr[currentQuiz].correct) {
-    //         score++;
-    //     };
     if (chosen) {
         choices[currentQuiz] = chosen;
 
@@ -166,7 +171,7 @@ submitBtn.addEventListener('click', () => {
     }
     currentQuiz++;
 
-    if (currentQuiz <= questionArr.length) {
+    if (currentQuiz < questionArr.length) {
         loadQuiz();
     }
     // else {
@@ -183,6 +188,12 @@ quesbtn.forEach(item => {
     item.addEventListener('click', () => {
         //handle click
         // console.dir(quesbtn[0]);
+        const chosen = getSelected();
+        if (chosen) {
+            choices[currentQuiz] = chosen;
+
+            // console.log(choices[currentQuiz]);
+        }
         let index = (item.innerHTML) - 1;
         currentQuiz = index;
         // console.log(choices[currentQuiz]);
@@ -197,14 +208,17 @@ finishbtn.addEventListener('click', () => {
     // console.dir(finishbtn);
     // console.log(choices.length)
     for (let i = 0; i < choices.length; i++) {
-        // console.log(questionArr[i].correct)
+        console.log(questionArr[i])
         if (choices[i] == questionArr[i].correct) {
             score++;
         }
     }
     quiz.innerHTML = `
             <h1 style="text-align: center">You scored ${score}/${questionArr.length}</h1>
-            <button onclick = "location.reload()" class="next_btn">Reload</button>
+            <div class="center">
+            <a href="/login">Back to Login</a>
+            </div>
             `
+    questionscontainer.remove();
 
 })
