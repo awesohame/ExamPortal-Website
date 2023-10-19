@@ -9,14 +9,14 @@
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
         rel="stylesheet">
     <link rel="stylesheet" href="../css/examone.css">
-    <title>Student Quiz App</title>
+    <title>Maths</title>
 </head>
 <!-- <body>
     <header>
         <nav class = "main_container">
             <div class="nav_main_inner_box">
                 <div class = "logo_section">
-                    <h1>StudySprint</h1> 
+                    <h1>STUDENTJSQUIZ.com</h1> 
                 </div>
                 <ul id="nav_list">
                     <li><a href="">HOME</a></li>
@@ -28,8 +28,8 @@
         </nav>
     </header> -->
 <main class="quiz_sect_wrap">
-    <div class="sect_container" id="quiz">
-        <div class="quiz_sect">
+    <div class="sect_container">
+        <div id="quiz">
             <h2 id="question">Question</h2>
             <ul id="ul_container">
                 <li class="input_options">
@@ -51,40 +51,39 @@
 
             </ul>
 
+
+            <div class="btncontainer">
+                <button type="submit" id="myBtn" class="next_btn">Next Question</button>
+            </div>
         </div>
-        <div>
-            <button type="submit" id="myBtn" class="next_btn">Submit</button>
-        </div>
+
 
     </div>
 
     <div class="questions">
         <p class="questionstext">Questions:</p>
         <div class="questionscontainer">
-            <div class="ques">1</div>
-            <div class="ques">2</div>
-            <div class="ques">3</div>
-            <div class="ques">4</div>
-            <div class="ques">5</div>
-            <div class="ques">6</div>
-            <div class="ques">7</div>
-            <div class="ques">8</div>
-            <div class="ques">9</div>
-            <div class="ques">10</div>
-            <div class="ques">o</div>
-            <div class="ques">o</div>
-            <div class="ques">0</div>
-            <div class="ques">0</div>
-            <div class="ques">0</div>
-            <div class="ques">0</div>
-            <div class="ques">0</div>
-            <div class="ques">0</div>
-            <div class="ques">0</div>
-            <div class="ques">0</div>
+            <button class="ques redques">1</button>
+            <button class="ques redques">2</button>
+            <button class="ques redques">3</button>
+            <button class="ques redques">4</button>
+            <button class="ques redques">5</button>
+            <button class="ques redques">6</button>
+            <button class="ques redques">7</button>
+            <button class="ques redques">8</button>
+            <button class="ques redques">9</button>
+            <button class="ques redques">10</button>
+        </div>
+        <div class="submitcontainer">
+            <button type="finish" id="finish">Submit</button>
         </div>
     </div>
-    <script src="./quizApp.js"></script>
+
 </main>
+<!-- <div class="submitcontainer">
+    <button type="finish" class="finish">Submit</button>
+</div> -->
+<script src="../js/exammaths.js"></script>
 </body>
 
 </html>

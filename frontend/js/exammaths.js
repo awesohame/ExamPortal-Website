@@ -233,7 +233,7 @@ finishbtn.addEventListener('click', () => {
     quiz.innerHTML = `
             <h1 style="text-align: center">You scored ${score}/${questionArr.length}</h1>
             <div class="center">
-            <a href="/login">Back to Login</a>
+            <a href="/">Back to Homepage</a>
             </div>
             `
     questionscontainer.remove();
