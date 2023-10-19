@@ -147,6 +147,21 @@ function loadQuiz() {
         submitparent.appendChild(submitBtn);
     }
 };
+
+function loadQues() {
+    quesbtn.forEach(item => {
+        console.dir(item);
+        index = (item.innerHTML) - 1;
+        if (choices[index] != 'e') {
+            item.classList.add("greenques");
+            item.classList.remove("redques");
+        }
+        else {
+            item.classList.add("redques");
+            item.classList.remove("greenques");
+        }
+    });
+}
 //this function deselect the buttons
 function deselectChoices() {
     choicesEls.forEach(choicesEl => choicesEl.checked = false);
@@ -174,6 +189,7 @@ submitBtn.addEventListener('click', () => {
     if (currentQuiz < questionArr.length) {
         loadQuiz();
     }
+    loadQues();
     // else {
     //     quiz.innerHTML = `
     //     <h1 style="text-align: center">You scored ${score}/${questionArr.length}</h1>
@@ -200,6 +216,7 @@ quesbtn.forEach(item => {
         if (currentQuiz <= questionArr.length) {
             loadQuiz();
         }
+        loadQues();
 
     })
 });

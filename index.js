@@ -109,7 +109,7 @@ app.post('/signup', function (req, res) {
 
                         // res.redirect('/continue');
                         // res.render('continue.ejs', { username });
-                        console.log(results);
+                        // console.log(results);
                         res.redirect("/login");
                     }
                     );

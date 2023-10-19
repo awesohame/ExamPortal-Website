@@ -165,11 +165,27 @@ ul>.input_options:hover {
     flex-wrap: wrap;
 }
 
-.ques {
+.redques {
     width: 40px;
     height: 40px;
     color: #fff;
     background-color: rgb(255, 46, 46);
+    border: none;
+    border-radius: 5px;
+    margin: 20px;
+    /* padding: 10px; */
+    /* text-align: center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.greenques {
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    background-color: #5cb874;
     border: none;
     border-radius: 5px;
     margin: 20px;
