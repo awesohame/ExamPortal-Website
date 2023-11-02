@@ -1,6 +1,6 @@
 const questionArr = [
     {
-        question: "What is the sum of all prime numbers between 20 and 30?",
+        question: "1. What is the sum of all prime numbers between 20 and 30?",
         a: "73",
         b: "80",
         c: "79",
@@ -9,7 +9,7 @@ const questionArr = [
     },
 
     {
-        question: "If a quadratic equation 2x² - 5x + k = 0 has equal roots, what is the value of 'k'?",
+        question: "2. If a quadratic equation 2x² - 5x + k = 0 has equal roots, what is the value of 'k'?",
         a: "5/2",
         b: "25/4",
         c: "11",
@@ -18,7 +18,7 @@ const questionArr = [
     },
 
     {
-        question: "If f(x) = x³ - 4x² + 3x + 2, what is f'(x) (the derivative of f(x))?",
+        question: "3. If f(x) = x³ - 4x² + 3x + 2, what is f'(x) (the derivative of f(x))?",
         a: "3x² - 8x + 3",
         b: "2x² - 8x + 3",
         c: "3x² - 5x + 3",
@@ -27,7 +27,7 @@ const questionArr = [
     },
 
     {
-        question: "If the equation of a circle is (x - 2)² + (y + 3)² = 25, what is the radius of the circle?",
+        question: "4. If the equation of a circle is (x - 2)² + (y + 3)² = 25, what is the radius of the circle?",
         a: "5",
         b: "4",
         c: "9",
@@ -36,7 +36,7 @@ const questionArr = [
     },
 
     {
-        question: "Solve the trigonometric equation: 2sin(x) - √3 = 0 for 0° ≤ x < 360°. What are the solutions?",
+        question: "5. Solve the trigonometric equation: 2sin(x) - √3 = 0 for 0° ≤ x < 360°. What are the solutions?",
         a: "60°, 300°",
         b: "45°, 225°",
         c: "30°, 100°",
@@ -45,7 +45,7 @@ const questionArr = [
 
     },
     {
-        question: "A triangle has sides of length 6 cm, 8 cm, and 10 cm. Is it a right-angled triangle?",
+        question: "6. A triangle has sides of length 6 cm, 8 cm, and 10 cm. Is it a right-angled triangle?",
         a: "Yes",
         b: "No",
         c: "Cannot determine",
@@ -54,7 +54,7 @@ const questionArr = [
 
     },
     {
-        question: "If log base 3 of x = 2, what is the value of x?",
+        question: "7. If log base 3 of x = 2, what is the value of x?",
         a: "3",
         b: "6",
         c: "9",
@@ -63,7 +63,7 @@ const questionArr = [
 
     },
     {
-        question: "What is the value of the expression (1 - i)², where 'i' is the imaginary unit?",
+        question: "8. What is the value of the expression (1 - i)², where 'i' is the imaginary unit?",
         a: "2 - 2i",
         b: "8 + i",
         c: "8 - i",
@@ -72,7 +72,7 @@ const questionArr = [
 
     },
     {
-        question: "If a fair six-sided die is rolled, what is the probability of rolling a prime number?",
+        question: "9. If a fair six-sided die is rolled, what is the probability of rolling a prime number?",
         a: "8",
         b: "1/2",
         c: "1/6",
@@ -81,7 +81,7 @@ const questionArr = [
 
     },
     {
-        question: "A right circular cone has a radius of 4 cm and a height of 9 cm. What is the volume of the cone?",
+        question: "10. A right circular cone has a radius of 4 cm and a height of 9 cm. What is the volume of the cone?",
         a: "12π cm³",
         b: "90π cm³",
         c: "108π cm³",
@@ -230,12 +230,52 @@ finishbtn.addEventListener('click', () => {
             score++;
         }
     }
-    quiz.innerHTML = `
+    resquery = `
             <h1 style="text-align: center">You scored ${score}/${questionArr.length}</h1>
             <div class="center">
-            <a href="/">Back to Homepage</a>
+            </div>
+            <div class="resquescontainer">
+            <div class="indexques">Ques No.</div>
+            <div class="resques">Correct Answer</div>
+            <div class="ansques">Your Answer</div>
             </div>
             `
+    // `
+    // <div className="resultcontainer">
+    //     <div className="result">
+
+    //     </div>
+    //     <div className="result"></div>
+    //     <div className="result"></div>
+    //     <div className="result"></div>
+    //     <div className="result"></div>
+    //     <div className="result"></div>
+    //     <div className="result"></div>
+    //     <div className="result"></div>
+    //     <div className="result"></div>
+    //     <div className="result"></div>
+    // </div>
+    // `
+    i = 0;
+    questionArr.forEach(ques => {
+        let chc = choices[i];
+        if (choices[i] === "e")
+            chc = 'Not attempted';
+        resquery = resquery + `
+        <div class="resquescontainer">
+            <div class="indexques">${i + 1}</div>
+            <div class="resques">${ques.correct}</div>
+            <div class="ansques">${chc}</div>
+        </div>
+        `
+        i++;
+    });
+    resquery = resquery + `
+    <div class="center">
+        <a href="/solutions/maths" id="answers">View solutions</a>
+    </div>
+    `
+    quiz.innerHTML = resquery;
     questionscontainer.remove();
 
 })
