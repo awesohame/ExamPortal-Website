@@ -1,94 +1,84 @@
 const questionArr = [
     {
-        question: "1. What is the sum of all prime numbers between 20 and 30?",
-        a: "73",
-        b: "80",
-        c: "79",
-        d: "67",
-        correct: "c"
-    },
-
-    {
-        question: "2. If a quadratic equation 2x² - 5x + k = 0 has equal roots, what is the value of 'k'?",
-        a: "5/2",
-        b: "25/8",
-        c: "11",
-        d: "18",
+        question: "What is the SI unit of force?",
+        a: "Watt",
+        b: "Newton",
+        c: "Joule",
+        d: "Volt",
         correct: "b"
     },
-
     {
-        question: "3. If f(x) = x³ - 4x² + 3x + 2, what is f'(x) (the derivative of f(x))?",
-        a: "3x² - 8x + 3",
-        b: "2x² - 8x + 3",
-        c: "3x² - 5x + 3",
-        d: "8x² - 8x + 9",
-        correct: "a"
-    },
-
-    {
-        question: "4. If the equation of a circle is (x - 2)² + (y + 3)² = 25, what is the radius of the circle?",
-        a: "5",
-        b: "4",
-        c: "9",
-        d: "16",
-        correct: "a"
-    },
-
-    {
-        question: "5. Solve the trigonometric equation: 2sin(x) - √3 = 0 for 0° ≤ x < 360°. What are the solutions?",
-        a: "60°, 300°",
-        b: "45°, 225°",
-        c: "30°, 100°",
-        d: "30°, 60°",
-        correct: "a"
-
-    },
-    {
-        question: "6. A triangle has sides of length 6 cm, 8 cm, and 10 cm. Is it a right-angled triangle?",
-        a: "Yes",
-        b: "No",
-        c: "Cannot determine",
-        d: "Maybe",
-        correct: "a"
-
-    },
-    {
-        question: "7. If log base 3 of x = 2, what is the value of x?",
-        a: "3",
-        b: "6",
-        c: "9",
-        d: "1",
+        question: "Which of the following quantities is a vector?",
+        a: "Speed",
+        b: "Temperature",
+        c: "Velocity",
+        d: "Mass",
         correct: "c"
-
     },
     {
-        question: "8. What is the value of the expression (1 - i)², where 'i' is the imaginary unit?",
-        a: "2 - 2i",
-        b: "8 + i",
-        c: "8 - i",
-        d: "-3",
-        correct: "a"
-
+        question: "What is the law that states that every object persists in its state of rest or uniform motion unless acted upon by an external force?",
+        a: "Law of Gravitation",
+        b: "Law of Inertia",
+        c: "Ohm's Law",
+        d: "Boyle's Law",
+        correct: "b"
     },
     {
-        question: "9. If a fair six-sided die is rolled, what is the probability of rolling a prime number?",
-        a: "8",
-        b: "1/2",
-        c: "1/6",
-        d: "7",
+        question: "What is the formula for the kinetic energy of an object?",
+        a: "E = mc²",
+        b: "E = mv²",
+        c: "E = 1/2 mv²",
+        d: "E = Fd",
         correct: "c"
-
     },
     {
-        question: "10. A right circular cone has a radius of 4 cm and a height of 9 cm. What is the volume of the cone?",
-        a: "12π cm³",
-        b: "90π cm³",
-        c: "108π cm³",
-        d: "18π cm³",
+        question: "Which type of wave does not require a medium for propagation?",
+        a: "Transverse wave",
+        b: "Longitudinal wave",
+        c: "Electromagnetic wave",
+        d: "Sound wave",
         correct: "c"
-
     },
+    {
+        question: "What is the unit of electrical resistance?",
+        a: "Watt",
+        b: "Ampere",
+        c: "Ohm",
+        d: "Volt",
+        correct: "c"
+    },
+    {
+        question: "What is the law that describes the relationship between the current, voltage, and resistance in an electrical circuit?",
+        a: "Newton's Law",
+        b: "Einstein's Theory of Relativity",
+        c: "Ohm's Law",
+        d: "Hooke's Law",
+        correct: "c"
+    },
+    {
+        question: "Which of the following is an example of a first-class lever?",
+        a: "Nutcracker",
+        b: "Tweezers",
+        c: "Wheelbarrow",
+        d: "Scissors",
+        correct: "b"
+    },
+    {
+        question: "What is the SI unit of power?",
+        a: "Joule",
+        b: "Watt",
+        c: "Hertz",
+        d: "Ampere",
+        correct: "b"
+    },
+    {
+        question: "Which law of thermodynamics states that energy cannot be created or destroyed, only transferred or converted?",
+        a: "Zeroth Law",
+        b: "First Law",
+        c: "Second Law",
+        d: "Third Law",
+        correct: "b"
+    }
 ];
 
 const quiz = document.getElementById('quiz');
@@ -272,10 +262,11 @@ finishbtn.addEventListener('click', () => {
     });
     resquery = resquery + `
     <div class="center">
-        <a href="/solutions/maths" id="answers">View solutions</a>
+        <a href="/solutions/physics" id="answers">View solutions</a>
     </div>
     `
     quiz.innerHTML = resquery;
     questionscontainer.remove();
 
 })
+

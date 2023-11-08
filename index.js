@@ -157,7 +157,7 @@ app.post('/exam/:user', function (req, res) {
 
 app.post('/examphy/:user', function (req, res) {
     let user = req.params.user;
-    res.render("examphy.ejs", { username });
+    res.render("examphy.ejs", { user });
     // res.sendFile(path.join(__dirname, '/frontend/html/exam.html'));
 })
 
@@ -173,6 +173,18 @@ app.post('/exammaths/:user', function (req, res) {
     // res.sendFile(path.join(__dirname, '/frontend/html/exam.html'));
 })
 // req.params
+app.get('/solutions/maths', function (req, res) {
+    res.sendFile(path.join(__dirname, '/frontend/html/maths.html'))
+})
+
+app.get('/solutions/physics', function (req, res) {
+    res.sendFile(path.join(__dirname, '/frontend/html/phy.html'))
+})
+
+app.get('/solutions/chemistry', function (req, res) {
+    res.sendFile(path.join(__dirname, '/frontend/html/chem.html'))
+})
+
 
 app.listen(port, () => {
     console.log('app is listening');

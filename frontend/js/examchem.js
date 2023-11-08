@@ -1,95 +1,86 @@
 const questionArr = [
     {
-        question: "1. What is the sum of all prime numbers between 20 and 30?",
-        a: "73",
-        b: "80",
-        c: "79",
-        d: "67",
-        correct: "c"
+        question: "Which of the following elements is a noble gas?",
+        a: "Neon",
+        b: "Nitrogen",
+        c: "Sodium",
+        d: "Chlorine",
+        correct: "a"
     },
-
     {
-        question: "2. If a quadratic equation 2x² - 5x + k = 0 has equal roots, what is the value of 'k'?",
-        a: "5/2",
-        b: "25/8",
-        c: "11",
-        d: "18",
+        question: "What is the chemical formula for sulfuric acid?",
+        a: "H2SO3",
+        b: "H2SO4",
+        c: "H2SO2",
+        d: "H2S2O4",
         correct: "b"
     },
-
     {
-        question: "3. If f(x) = x³ - 4x² + 3x + 2, what is f'(x) (the derivative of f(x))?",
-        a: "3x² - 8x + 3",
-        b: "2x² - 8x + 3",
-        c: "3x² - 5x + 3",
-        d: "8x² - 8x + 9",
+        question: "Which of the following is a transition metal?",
+        a: "Aluminum",
+        b: "Copper",
+        c: "Sodium",
+        d: "Calcium",
+        correct: "b"
+    },
+    {
+        question: "What is the molecular formula of glucose?",
+        a: "C6H12O6",
+        b: "C2H4O2",
+        c: "C3H6O3",
+        d: "C5H10O5",
         correct: "a"
     },
-
     {
-        question: "4. If the equation of a circle is (x - 2)² + (y + 3)² = 25, what is the radius of the circle?",
-        a: "5",
-        b: "4",
-        c: "9",
+        question: "What is the main component of natural gas?",
+        a: "Oxygen",
+        b: "Nitrogen",
+        c: "Methane",
+        d: "Carbon dioxide",
+        correct: "c"
+    },
+    {
+        question: "Which of the following is a halogen?",
+        a: "Sodium",
+        b: "Chlorine",
+        c: "Calcium",
+        d: "Potassium",
+        correct: "b"
+    },
+    {
+        question: "What is the atomic number of oxygen?",
+        a: "6",
+        b: "8",
+        c: "14",
         d: "16",
+        correct: "b"
+    },
+    {
+        question: "Which gas is responsible for the greenhouse effect on Earth?",
+        a: "Oxygen",
+        b: "Carbon dioxide",
+        c: "Nitrogen",
+        d: "Hydrogen",
+        correct: "b"
+    },
+    {
+        question: "In a redox reaction, the substance that gains electrons is said to be:",
+        a: "Oxidized",
+        b: "Reduced",
+        c: "Neutral",
+        d: "Unchanged",
+        correct: "b"
+    },
+    {
+        question: "What is the chemical formula of sodium chloride?",
+        a: "NaCl",
+        b: "Na2Cl",
+        c: "NaCl2",
+        d: "Na2Cl2",
         correct: "a"
-    },
-
-    {
-        question: "5. Solve the trigonometric equation: 2sin(x) - √3 = 0 for 0° ≤ x < 360°. What are the solutions?",
-        a: "60°, 300°",
-        b: "45°, 225°",
-        c: "30°, 100°",
-        d: "30°, 60°",
-        correct: "a"
-
-    },
-    {
-        question: "6. A triangle has sides of length 6 cm, 8 cm, and 10 cm. Is it a right-angled triangle?",
-        a: "Yes",
-        b: "No",
-        c: "Cannot determine",
-        d: "Maybe",
-        correct: "a"
-
-    },
-    {
-        question: "7. If log base 3 of x = 2, what is the value of x?",
-        a: "3",
-        b: "6",
-        c: "9",
-        d: "1",
-        correct: "c"
-
-    },
-    {
-        question: "8. What is the value of the expression (1 - i)², where 'i' is the imaginary unit?",
-        a: "2 - 2i",
-        b: "8 + i",
-        c: "8 - i",
-        d: "-3",
-        correct: "a"
-
-    },
-    {
-        question: "9. If a fair six-sided die is rolled, what is the probability of rolling a prime number?",
-        a: "8",
-        b: "1/2",
-        c: "1/6",
-        d: "7",
-        correct: "c"
-
-    },
-    {
-        question: "10. A right circular cone has a radius of 4 cm and a height of 9 cm. What is the volume of the cone?",
-        a: "12π cm³",
-        b: "90π cm³",
-        c: "108π cm³",
-        d: "18π cm³",
-        correct: "c"
-
-    },
+    }
 ];
+
 
 const quiz = document.getElementById('quiz');
 const choicesEls = document.querySelectorAll('.choices');
@@ -272,7 +263,7 @@ finishbtn.addEventListener('click', () => {
     });
     resquery = resquery + `
     <div class="center">
-        <a href="/solutions/maths" id="answers">View solutions</a>
+        <a href="/solutions/chemistry" id="answers">View solutions</a>
     </div>
     `
     quiz.innerHTML = resquery;
