@@ -97,10 +97,31 @@ const quesbtn = document.querySelectorAll('.ques');
 const finishbtn = document.getElementById('finish');
 const submitparent = document.querySelector('.btncontainer');
 const questionscontainer = document.querySelector('.questions');
+const timercontainer = document.querySelector('.countdowncontainer');
+const root = document.querySelector('.quiz_sect_wrap');
 let choices = ['e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e'];
 
 let currentQuiz = 0;
 let score = 0;
+
+let timer = 10 * 60;
+
+function startTimer() {
+    let timeInterval = setInterval(function () {
+        if (timer > 0) {
+
+            document.getElementById("countdown").innerHTML = "Timer - " + Math.floor(timer / 60) + ":" + timer % 60;
+            timer--;
+        } else {
+            clearInterval(timeInterval);
+            alert("Time's up!");
+            // endQuiz();
+            finishbtn.click();
+        }
+    }, 1000);
+}
+
+startTimer();
 
 loadQuiz();
 
@@ -267,6 +288,8 @@ finishbtn.addEventListener('click', () => {
     `
     quiz.innerHTML = resquery;
     questionscontainer.remove();
+    timercontainer.remove();
+    root.classList.add("main");
 
 })
 

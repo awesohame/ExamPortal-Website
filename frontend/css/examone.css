@@ -56,8 +56,15 @@ main {
     justify-content: center;
     align-items: center;
     margin: 0;
-    height: 100vh;
+    height: 90vh;
+}
 
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
 }
 
 .sect_container {
@@ -274,4 +281,21 @@ ul>.input_options:hover {
 #answers:hover {
     background-color: #5cb874;
     transition: .7s;
+}
+
+.countdowncontainer {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 10vh;
+
+}
+
+#countdown {
+    font-size: 20px;
+    padding: 5px 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    color: #000000;
+    margin-right: 150px;
 }
