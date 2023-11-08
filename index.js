@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 const port = 80;
 const mysql = require('mysql2');
+const { log } = require('console');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -49,16 +50,54 @@ app.get('/signup', function (req, res) {
     res.sendFile(path.join(__dirname, '/frontend/html/signup.html'));
 })
 
-// app.get('/continue', function (req, res) {
-//     // res.render("./frontend/html/home.html"
-//     let username = "test1";
-//     // res.send("ok")
-//     res.render('continue.ejs', { username });
-// })
-// function redir(req, res) {
-//     console.log(req.dataProcessed);
-// }
-// app.get('/continue', redir)
+app.post('/contact', function (req, res) {
+    let name = req.body.name;
+    let email = req.body.email;
+    let subject = req.body.subject;
+    let message = req.body.message;
+
+    try {
+        let q = `SELECT * FROM contact`;
+        connection.query(q, (err, results) => {
+            if (err) throw err;
+
+
+            try {
+                let newq = `INSERT INTO contact (name,email,subject,message) VALUES ("${name}","${email}","${subject}","${message}")`;
+                connection.query(newq, [name, email, subject, message], (err, results) => {
+                    if (err) throw err;
+
+                    // res.redirect('/continue');
+                    // res.render('continue.ejs', { username });
+                    // console.log(results);
+                    res.redirect("/");
+                }
+                );
+            } catch (err) {
+                console.log(err);
+                res.send("ERROR in db");
+
+            }
+
+
+            console.log(results);
+
+        }
+        );
+    } catch (err) {
+        console.log(err);
+        res.send("ERROR in db");
+    }
+    finally {
+        res.sendFile(path.join(__dirname, '/frontend/html/home.html'));
+    }
+
+    // console.log(req.body);
+    // console.log(email);
+    // console.log(subject);
+    // console.log(message);
+
+})
 
 app.post('/login', function (req, res) {
     let username = req.body.username;
