@@ -70,7 +70,7 @@ app.post('/contact', function (req, res) {
                     // res.redirect('/continue');
                     // res.render('continue.ejs', { username });
                     // console.log(results);
-                    res.redirect("/");
+                    res.sendFile(path.join(__dirname, '/frontend/html/home.html'));
                 }
                 );
             } catch (err) {
